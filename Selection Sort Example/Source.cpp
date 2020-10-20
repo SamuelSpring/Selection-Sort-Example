@@ -21,17 +21,17 @@ void selectionSort(int arr[], int arrSize) {
 	rather than move elements one subscript at a time, we bypass that whole
 	process by moving the intended element directly to its final destination.
 	*/
-	for (int position = 0; position < arrSize - 1; position++) {			//						DETAILED EXPLANATION:
-		minIndex = position;												//we set our minimum index to the current position that is unsorted.
-		for (int maxIndex = position + 1; maxIndex < arrSize; maxIndex++) { //then we go through each subscript until..
-			if (arr[maxIndex] < arr[minIndex]) {							//we find an element that is smaller than our current "position" AKA minIndex.
-				minIndex = maxIndex;										//the new min is set to the current max.
+	for (int position = 0; position < arrSize - 1; position++) {			//				DETAILED EXPLANATION:
+		minIndex = position;									//we set our minimum index to the current position that is unsorted.
+		for (int maxIndex = position + 1; maxIndex < arrSize; maxIndex++) { 			//then we go through each subscript until..
+			if (arr[maxIndex] < arr[minIndex]) {						//we find an element that is smaller than our current "position" AKA minIndex.
+				minIndex = maxIndex;							//the new min is set to the current max.
 			}
 		}
-		if (minIndex != position) {											//then as long as the minimum and the position are not the same,
-			swap(arr[minIndex], arr[position]);								//we swap the new minIndex (previously our maxIndex) with our old minIndex, AKA the "position."
+		if (minIndex != position) {								//then as long as the minimum and the position are not the same,
+			swap(arr[minIndex], arr[position]);						//we swap the new minIndex (previously our maxIndex) with our old minIndex, AKA the "position."
 		}
-																			//repeat until the entire array is in ascending order.
+													//repeat until the entire array is in ascending order.
 	}
 
 
